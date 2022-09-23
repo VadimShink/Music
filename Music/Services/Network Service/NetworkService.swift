@@ -31,16 +31,12 @@ class NetworkService {
             let decoder = JSONDecoder()
             do {
                 let objects = try decoder.decode(SearchResponse.self, from: data)
-//                print("objects: ", objects)
                 completion(objects)
                 
             } catch let jsonError {
                 print("Failed to decode JSON", jsonError)
                 completion(nil)
             }
-            
-//            let someString = String(data: data, encoding: .utf8)
-//            print(someString ?? "")
         }
     }
 }
