@@ -49,7 +49,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         setup()
         setupSearchBar()
         setupTableView()
-        searchBar(searchController.searchBar, textDidChange: "Izzamuzzic")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +88,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
             footerView.showLoader()
         }
     }
-    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -108,11 +106,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
-//        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-//        let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
-//        trackDetailsView.set(viewModel: cellViewModel)
-//        trackDetailsView.delegate = self
-//        window?.addSubview(trackDetailsView)
         self.tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
     }
     

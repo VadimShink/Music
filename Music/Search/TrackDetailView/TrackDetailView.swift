@@ -86,7 +86,6 @@ class TrackDetailView: UIView {
     }
 
     private func playTrack(previewUrl: String?) {
-//        print("Пытаюсь включить трэк по ссылке: \(previewUrl ?? "Отсутствует")")
         guard let url = URL(string: previewUrl ?? "") else { return }
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
@@ -96,7 +95,6 @@ class TrackDetailView: UIView {
     //MARK: - Maximizing and minimizing gestures
     
     @objc private func handleTapMaximized() {
-        print("tapping to maximized")
         self.tabBarDelegate?.maximizeTrackDetailController(viewModel: nil)
     }
     

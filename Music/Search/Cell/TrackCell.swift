@@ -32,7 +32,7 @@ class TrackCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    /// Обязательно вызвать при переиспользовании изображений в таблице
+    /// Be sure to call when reusing images in the table
     override func prepareForReuse() {
         super.prepareForReuse()
         trackImageView.image = nil
@@ -71,7 +71,6 @@ class TrackCell: UITableViewCell {
         listOfTracks.append(cell)
         
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
-            print("успешно")
             defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
         }
     }

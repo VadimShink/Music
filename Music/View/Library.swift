@@ -73,7 +73,6 @@ struct Library: View {
             }.actionSheet(isPresented: $showingAlert, content: {
                 ActionSheet(title: Text("Are you sure you want to delete this track?"),
                             buttons: [.destructive(Text("Delete"), action: {
-                    print("удаляем \(self.track.trackName)")
                     self.delete(track: self.track)
                 }), .cancel()])
             })
@@ -103,7 +102,6 @@ struct Library: View {
 struct LibraryCell: View {
     
     var cell: SearchViewModel.Cell
-    
     
     var body: some View {
         HStack {
@@ -154,6 +152,4 @@ extension Library: TrackMovingDelegate {
         self.track = nextTrack
         return nextTrack
     }
-    
-    
 }
